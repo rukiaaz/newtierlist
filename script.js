@@ -1,17 +1,17 @@
 let playersDatabase = [
-  { id: 1, name: "Zhwae", minecraftName: "Zhwae", points: 405, specialization: "LT4", region: "AS", role: "Overseer - Pinuno" },
-  { id: 2, name: "Negmaa", minecraftName: "Negmaa", points: 330, specialization: "LT4", region: "AS", role: "Tester - High Venerable" },
-  { id: 3, name: "KobPxR", minecraftName: "KobPxR", points: 260, specialization: "HT4", region: "AS", role: "Tester - High Venerable" },
-  { id: 4, name: "gogogacaca", minecraftName: "gogogacaca", points: 226, specialization: "LT4", region: "AS", role: "Tester - High Venerable" },
-  { id: 5, name: "Cushh", minecraftName: "Cushh", points: 226, specialization: "LT3", region: "AS", role: "Grand Venerable - Tester" },
-  { id: 6, name: "Oximeter", minecraftName: "Oximeter", points: 226, specialization: "HT5", region: "AS", role: "Venerable" },
-  { id: 7, name: "Akiodaiii", minecraftName: "Akiodaiii", points: 226, specialization: "HT5", region: "AS", role: "Venerable" },
-  { id: 7, name: "Akino", minecraftName: "Akino", points: 226, specialization: "LT4", region: "AS", role: "Venerable" },
-  { id: 8, name: "Yasue", minecraftName: "Yasue", points: 226, specialization: "LT3", region: "AS", role: "Tester - High Venerable" },
-  { id: 9, name: "Peakerip", minecraftName: "Peakerip", points: 226, specialization: "HT4", region: "AS", role: "Tester - High Venerable" },
-  { id: 10, name: "Klypse", minecraftName: "Klypse", points: 226, specialization: "HT5", region: "AS", role: "Venerable" },
-  { id: 11, name: "Zyx", minecraftName: "Zyx", points: 226, specialization: "HT5", region: "AS", role: "Venerable" },
-  { id: 12, name: "TightMC", minecraftName: "TightMC", points: 226, specialization: "LT3", region: "AS", role: "Venerable" }
+  {id: 1, name: "Zhwae", minecraftName: "Zhwae", points: 405, specialization: "LT4", region: "AS", role: "Overseer - Pinuno"},
+  {id: 2, name: "Negmaa", minecraftName: "Negmaa", points: 330, specialization: "LT4", region: "AS", role: "Tester - High Venerable"},
+  {id: 3, name: "KobPxR", minecraftName: "KobPxR", points: 260, specialization: "HT4", region: "AS", role: "Tester - High Venerable"},
+  {id: 4, name: "gogogacaca", minecraftName: "gogogacaca", points: 226, specialization: "LT4", region: "AS", role: "Tester - High Venerable"},
+  {id: 5, name: "Cushh", minecraftName: "Cushh", points: 226, specialization: "LT3", region: "AS", role: "Grand Venerable - Tester"},
+  {id: 6, name: "Oximeter", minecraftName: "Oximeter", points: 226, specialization: "HT5", region: "AS", role: "Venerable"},
+  {id: 7, name: "Akiodaiii", minecraftName: "Akiodaiii", points: 226, specialization: "HT5", region: "AS", role: "Venerable"},
+  {id: 7, name: "Akino", minecraftName: "Akino", points: 226, specialization: "LT4", region: "AS", role: "Venerable"},
+  {id: 8, name: "Yasue", minecraftName: "Yasue", points: 226, specialization: "LT3", region: "AS", role: "Tester - High Venerable"},
+  {id: 9, name: "Peakerip", minecraftName: "Peakerip", points: 226, specialization: "HT4", region: "AS", role: "Tester - High Venerable"},
+  {id: 10, name: "Klypse", minecraftName: "Klypse", points: 226, specialization: "HT5", region: "AS", role: "Venerable"},
+  {id: 11, name: "Zyx", minecraftName: "Zyx", points: 226, specialization: "HT5", region: "AS", role: "Venerable"},
+  {id: 12, name: "TightMC", minecraftName: "TightMC", points: 226, specialization: "LT3", region: "AS", role: "Venerable"},
 ];
 
 const addPlayerBtn = document.getElementById('addPlayerBtn');
@@ -21,14 +21,10 @@ const playerForm = document.getElementById('playerForm');
 const playersContainer = document.getElementById('playersContainer');
 const searchInput = document.getElementById('searchInput');
 
-// Open modal
 addPlayerBtn.addEventListener('click', () => { addPlayerModal.style.display = 'flex'; });
-
-// Close modal
 closeModal.addEventListener('click', () => { addPlayerModal.style.display = 'none'; });
 window.addEventListener('click', (e) => { if (e.target === addPlayerModal) addPlayerModal.style.display = 'none'; });
 
-// Add player
 playerForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const newPlayer = {
@@ -47,13 +43,12 @@ playerForm.addEventListener('submit', (e) => {
   addPlayerModal.style.display = 'none';
 });
 
-// Search
 searchInput.addEventListener('input', (e) => {
   const searchTerm = e.target.value.toLowerCase();
   if (!searchTerm) { renderPlayers(); return; }
-  const filtered = playersDatabase.filter(p =>
-    p.name.toLowerCase().includes(searchTerm) ||
-    p.minecraftName.toLowerCase().includes(searchTerm) ||
+  const filtered = playersDatabase.filter(p => 
+    p.name.toLowerCase().includes(searchTerm) || 
+    p.minecraftName.toLowerCase().includes(searchTerm) || 
     p.role.toLowerCase().includes(searchTerm) ||
     p.specialization.toLowerCase().includes(searchTerm)
   );
@@ -110,11 +105,14 @@ function createPlayerCard(player, index) {
 
   card.innerHTML = `
     <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+      <!-- Rank -->
       <div class="flex items-center md:col-span-1">
         <span class="w-8 h-8 flex items-center justify-center bg-gradient-to-br ${rankColor} rounded-full text-black font-bold">
           ${index + 1}
         </span>
       </div>
+
+      <!-- Player Info -->
       <div class="flex items-center space-x-3 md:col-span-4">
         <img src="https://minotar.net/helm/${player.minecraftName}/100" alt="${player.name}" class="w-12 h-12 rounded-full border-2 border-red-500 shadow-lg" />
         <div>
@@ -125,9 +123,13 @@ function createPlayerCard(player, index) {
           </div>
         </div>
       </div>
+
+      <!-- Region (desktop) -->
       <div class="hidden md:block text-center md:col-span-1">
         <span class="bg-black text-xs px-3 py-1 rounded-full border border-red-500/30">${player.region}</span>
       </div>
+
+      <!-- Specialization -->
       <div class="md:col-span-3">
         <div class="flex flex-wrap gap-2">
           <div class="tier-badge flex items-center space-x-1 bg-black px-3 py-1 rounded-full text-sm font-medium">
@@ -136,11 +138,17 @@ function createPlayerCard(player, index) {
           </div>
         </div>
       </div>
+
+      <!-- Role (desktop) -->
       <div class="hidden md:block text-center md:col-span-2" id="roleContainer-${player.id}"></div>
+
+      <!-- Points (desktop) -->
       <div class="hidden md:block text-right md:col-span-1">
         <span class="font-bold">${player.points}</span>
       </div>
     </div>
+
+    <!-- Mobile Stats -->
     <div class="grid grid-cols-3 gap-2 mt-3 md:hidden text-center text-sm">
       <div class="bg-black/50 rounded p-2 border border-red-500/30">
         <div class="text-gray-400">Region</div>
@@ -157,6 +165,7 @@ function createPlayerCard(player, index) {
     </div>
   `;
 
+  // Add role edit span into desktop role cell
   const roleCell = card.querySelector(`#roleContainer-${player.id}`);
   if (roleCell) roleCell.appendChild(roleDisplay);
 
