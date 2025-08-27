@@ -1,17 +1,27 @@
 let playersDatabase = [
-  {id: 1, name: "Zhwae", minecraftName: "Zhwae", points: 405, specialization: "LT4", region: "AS", role: "Overseer - Pinuno"},
-  {id: 2, name: "Negmaa", minecraftName: "Negmaa", points: 330, specialization: "LT4", region: "AS", role: "Tester - High Venerable"},
-  {id: 3, name: "KobPxR", minecraftName: "KobPxR", points: 260, specialization: "HT4", region: "AS", role: "Tester - High Venerable"},
-  {id: 4, name: "gogogacaca", minecraftName: "gogogacaca", points: 226, specialization: "LT4", region: "AS", role: "Tester - High Venerable"},
-  {id: 5, name: "Cushh", minecraftName: "Cushh", points: 226, specialization: "LT3", region: "AS", role: "Grand Venerable - Tester"},
-  {id: 6, name: "Oximeter", minecraftName: "Oximeter", points: 226, specialization: "HT5", region: "AS", role: "Venerable"},
-  {id: 7, name: "Akiodaiii", minecraftName: "Akiodaiii", points: 226, specialization: "HT5", region: "AS", role: "Venerable"},
-  {id: 7, name: "Akino", minecraftName: "Akino", points: 226, specialization: "LT4", region: "AS", role: "Venerable"},
-  {id: 8, name: "Yasue", minecraftName: "Yasue", points: 226, specialization: "LT3", region: "AS", role: "Tester - High Venerable"},
-  {id: 9, name: "Peakerip", minecraftName: "Peakerip", points: 226, specialization: "HT4", region: "AS", role: "Tester - High Venerable"},
-  {id: 10, name: "Klypse", minecraftName: "Klypse", points: 226, specialization: "HT5", region: "AS", role: "Venerable"},
-  {id: 11, name: "Zyx", minecraftName: "Zyx", points: 226, specialization: "HT5", region: "AS", role: "Venerable"},
-  {id: 12, name: "TightMC", minecraftName: "TightMC", points: 226, specialization: "LT3", region: "AS", role: "Venerable"},
+  {id: 1, name: "btgz.haise", minecraftName: "Zhwae", points: 405, specialization: "LT4", region: "AS", role: "Overseer - Pinuno"},
+  {id: 2, name: "btgz.negmaa", minecraftName: "Negmaa", points: 330, specialization: "LT4", region: "AS", role: "Tester - High Venerable"},
+  {id: 3, name: "btgz.kob", minecraftName: "KobPxR", points: 260, specialization: "HT4", region: "AS", role: "Tester - High Venerable"},
+  {id: 4, name: "btgz.cheewyy", minecraftName: "gogogacaca", points: 226, specialization: "LT4", region: "AS", role: "Tester - High Venerable"},
+  {id: 10, name: "btgz.elleinad", minecraftName: "drei", points: 226, specialization: "HT4", region: "AS", role: "High Venerable - Tester"},
+  {id: 5, name: "btgz.k4ye", minecraftName: "Cushh", points: 226, specialization: "LT3", region: "AS", role: "High Venerable - Tester"},
+  {id: 6, name: "btgz.x", minecraftName: "Oximeter", points: 226, specialization: "HT5", region: "AS", role: "Venerable"},
+  {id: 7, name: "btgz.akio", minecraftName: "Akiodaiii", points: 226, specialization: "HT5", region: "AS", role: "Venerable"},
+  {id: 7, name: "btgz.akino", minecraftName: "Akino", points: 226, specialization: "LT4", region: "AS", role: "Venerable"},
+  {id: 8, name: "btgz.klypse", minecraftName: "Klypse", points: 226, specialization: "HT5", region: "AS", role: "Venerable"},
+  {id: 9, name: "btgz.zyx", minecraftName: "Zyx", points: 226, specialization: "HT5", region: "AS", role: "Venerable"},
+  {id: 10, name: "btgz.yat", minecraftName: "TightMC", points: 226, specialization: "LT3", region: "AS", role: "Venerable"},
+  {id: 11, name: "btgz.sen", minecraftName: "Hanz0o", points: 226, specialization: "LT4", region: "AS", role: "High Venerable - Tester"}, 
+  {id: 10, name: "btgz.euiz", minecraftName: "drei", points: 226, specialization: "HT4", region: "AS", role: "High Venerable - Tester"}, 
+  {id: 12, name: "btgz.uamh", minecraftName: "uamh", points: 226, specialization: "LT4", region: "AS", role: "Venerable"},
+  {id: 13, name: "btgz.sora", minecraftName: "sora", points: 226, specialization: "LT3", region: "AS", role: "High Venerable"},
+  {id: 14, name: "btgz.drei", minecraftName: "drei", points: 226, specialization: "HT4", region: "AS", role: "High Venerable"},
+  {id: 15, name: "btgz.veylor", minecraftName: "veylor", points: 226, specialization: "HT5", region: "AS", role: "Venerable"},
+  {id: 16, name: "btgz.chino", minecraftName: "chino", points: 226, specialization: "HT5", region: "AS", role: "Venerable"},
+  {id: 17, name: "btgz.avoo", minecraftName: "avoo", points: 226, specialization: "LT4", region: "AS", role: "Venerable"},
+
+
+
 ];
 
 const addPlayerBtn = document.getElementById('addPlayerBtn');
